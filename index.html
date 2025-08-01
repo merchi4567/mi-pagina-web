@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acceso Agente</title>
+  <title>Plataforma de Seguridad – Comisaría Central</title>
   <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
 
-  <div class="contenedor">
-    <h1>Comisaría Central</h1>
-    <p class="subtitulo">Acceso restringido: solo personal autorizado</p>
+  <div class="pantalla">
+    <div class="panel">
+      <h1 class="titulo">🔒 Plataforma de Seguridad</h1>
+      <p class="subtitulo">Comisaría Central - Acceso solo para agentes autorizados</p>
 
-    <div class="panel-clave">
-      <label for="clave">Ingrese la clave de agente:</label>
-      <input type="password" id="clave" placeholder="••••••••" />
-      <button onclick="verificarClave()">Acceder</button>
+      <label for="clave" class="etiqueta">Clave de acceso:</label>
+      <input type="password" id="clave" placeholder="********" class="input" />
+      <button onclick="verificarClave()" class="boton">Entrar</button>
+
+      <p class="aviso">Todo acceso será registrado. Código de sesión: #A71X9</p>
     </div>
   </div>
 
@@ -23,9 +25,9 @@
     function verificarClave() {
       const clave = document.getElementById("clave").value;
       if (clave === "agenteX") {
-        window.location.href = "expediente.html"; // Redirige a otra página
+        window.location.href = "expediente.html";
       } else {
-        alert("Acceso denegado. Código incorrecto.");
+        alert("⚠️ Código incorrecto. Reportado al sistema.");
       }
     }
   </script>
