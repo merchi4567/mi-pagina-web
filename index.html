@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Archivos Clasificados</title>
+  <title>Acceso Agente</title>
   <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
@@ -17,22 +17,13 @@
       <input type="password" id="clave" placeholder="••••••••" />
       <button onclick="verificarClave()">Acceder</button>
     </div>
-
-    <div id="archivos" class="oculto">
-      <h2>📁 Expedientes del Caso #X92</h2>
-      <div class="galeria">
-        <img src="fotos/foto1.jpg" alt="Evidencia 1">
-        <img src="fotos/foto2.jpg" alt="Evidencia 2">
-        <img src="fotos/foto3.jpg" alt="Evidencia 3">
-      </div>
-    </div>
   </div>
 
   <script>
     function verificarClave() {
       const clave = document.getElementById("clave").value;
       if (clave === "agenteX") {
-        document.getElementById("archivos").classList.remove("oculto");
+        window.location.href = "expediente.html"; // Redirige a otra página
       } else {
         alert("Acceso denegado. Código incorrecto.");
       }
